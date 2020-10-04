@@ -76,17 +76,18 @@ class _SocketioPage extends State<SocketioPage> {
     echo = new Echo({
       'broadcaster': 'socket.io',
       'client': IO.io,
-      'auth': {
-        'headers': {
-          'Authorization':
-              'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjFkNTcxYzcyMTcwZmFmNDRmM2JkYjdkZTE2NmVmNTMzZTMwYjYwNjI2MjA5NjJlNWFhMmNkNTkyOTgwMzNlZmVlMjMyNzI2YTczMTY2NGZiIn0.eyJhdWQiOiIxIiwianRpIjoiMWQ1NzFjNzIxNzBmYWY0NGYzYmRiN2RlMTY2ZWY1MzNlMzBiNjA2MjYyMDk2MmU1YWEyY2Q1OTI5ODAzM2VmZWUyMzI3MjZhNzMxNjY0ZmIiLCJpYXQiOjE1NTAyNTE4MzIsIm5iZiI6MTU1MDI1MTgzMiwiZXhwIjoxNTgxNzg3ODMyLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.Yhmzofhp8q32gcFmzQDAmm48cwmxqrZAi4Mfsbzp6pyzjzWziEM8isDrNqyQZANXUJP40LGJroK9LkVddHyqWtPQqTNXPv-Azx3tVy_YOkI-BhJhttKaiN7DTPD9gYiuUpINUjrqTVuzxzDHzXNmTemOVqVBABo4f6m9ZoWkdyNKyirPZHagofs4Lp1YR0--AgItZVCPl3DYrLdMY78a687edQaYA1q3HKWPggtxayN35BPoeOm08uxmE_YzYXRTzi6OxGLNcQnrC61NvWqTCZ5Ze4fvUuVRtASqybV1Y4oxcgs2kZYg1rxm5idHUrGwQE4fLmaGgDclBR7Ax-NbiN-VN1gJpB2D7eVYxigCVsCVBnoA5DtjKewg0axckthTXyxcTWJBnbarbbnPuI9ZWrxaZWcp4kWwosw9_pr7Ee_5Q-Uxr_ksZg6qZ3gVrqR9ZY0zZoQl4qEsbUGfLXLGrKj_NjeESOcUsPY6fACIy_Okttxto_a3y9wQwPMDJY-jxdLdZ1TdusZUJG8d5KJxfOUprqsCzju-TVnLZxpA-f15mI9zIcjtA-2PFYnUuukIxBw-FXzBWssrMLyTXxHl9Sux3WH5mtXDW_wbwoJj6aaLHBw28jgokbdlKx3QRWdTvAsALJM6nmDN4BWu2pIn05i5wpcUnxHIvcdOgoh3hn0'
-        }
-      }
+      "host": "https://socketio-chat-h9jt.herokuapp.com/",
+      // 'auth': {
+      //   'headers': {
+      //     'Authorization':
+      //         'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjFkNTcxYzcyMTcwZmFmNDRmM2JkYjdkZTE2NmVmNTMzZTMwYjYwNjI2MjA5NjJlNWFhMmNkNTkyOTgwMzNlZmVlMjMyNzI2YTczMTY2NGZiIn0.eyJhdWQiOiIxIiwianRpIjoiMWQ1NzFjNzIxNzBmYWY0NGYzYmRiN2RlMTY2ZWY1MzNlMzBiNjA2MjYyMDk2MmU1YWEyY2Q1OTI5ODAzM2VmZWUyMzI3MjZhNzMxNjY0ZmIiLCJpYXQiOjE1NTAyNTE4MzIsIm5iZiI6MTU1MDI1MTgzMiwiZXhwIjoxNTgxNzg3ODMyLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.Yhmzofhp8q32gcFmzQDAmm48cwmxqrZAi4Mfsbzp6pyzjzWziEM8isDrNqyQZANXUJP40LGJroK9LkVddHyqWtPQqTNXPv-Azx3tVy_YOkI-BhJhttKaiN7DTPD9gYiuUpINUjrqTVuzxzDHzXNmTemOVqVBABo4f6m9ZoWkdyNKyirPZHagofs4Lp1YR0--AgItZVCPl3DYrLdMY78a687edQaYA1q3HKWPggtxayN35BPoeOm08uxmE_YzYXRTzi6OxGLNcQnrC61NvWqTCZ5Ze4fvUuVRtASqybV1Y4oxcgs2kZYg1rxm5idHUrGwQE4fLmaGgDclBR7Ax-NbiN-VN1gJpB2D7eVYxigCVsCVBnoA5DtjKewg0axckthTXyxcTWJBnbarbbnPuI9ZWrxaZWcp4kWwosw9_pr7Ee_5Q-Uxr_ksZg6qZ3gVrqR9ZY0zZoQl4qEsbUGfLXLGrKj_NjeESOcUsPY6fACIy_Okttxto_a3y9wQwPMDJY-jxdLdZ1TdusZUJG8d5KJxfOUprqsCzju-TVnLZxpA-f15mI9zIcjtA-2PFYnUuukIxBw-FXzBWssrMLyTXxHl9Sux3WH5mtXDW_wbwoJj6aaLHBw28jgokbdlKx3QRWdTvAsALJM6nmDN4BWu2pIn05i5wpcUnxHIvcdOgoh3hn0'
+      //   }
+      // }
     });
 
     echo.socket.on('connect', (_) {
       log('connected');
-
+      echo.socket.emit('add user', 'echo');
       setState(() {
         is_connected = true;
       });
@@ -114,23 +115,25 @@ class _SocketioPage extends State<SocketioPage> {
   void _listenToChannel(String type, String name, String event) {
     dynamic channel;
 
-    if (type == 'public') {
-      channel = echo.channel(name);
-    } else if (type == 'private') {
-      channel = echo.private(name);
-    } else if (type == 'presence') {
-      channel = echo.join(name).here((users) {
-        print(users);
-      }).joining((user) {
-        print(user);
-      }).leaving((user) {
-        print(user);
-      });
-    }
-
-    channel.listen(event, (e) {
-      log('channel: $name, event: $event');
+    // if (type == 'public') {
+    //   channel = echo.channel(name);
+    // } else if (type == 'private') {
+    //   channel = echo.private(name);
+    // } else if (type == 'presence') {
+    //   channel = echo.join(name).here((users) {
+    //     print(users);
+    //   }).joining((user) {
+    //     print(user);
+    //   }).leaving((user) {
+    //     print(user);
+    //   });
+    // }
+    echo.socket.on(event, (e) {
+      log(' event: $event  $e');
     });
+    // channel.listen(event, (e) {
+    //   log('channel: $name, event: $event');
+    // });
   }
 
   @override
@@ -345,6 +348,7 @@ class _ChannelModalState extends State<ChannelModal> {
             child: CupertinoTextField(
               controller: nameController,
               placeholder: 'Channel name',
+              style: TextStyle(color: Colors.red),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.all(Radius.circular(5)),
                 border: Border.all(
@@ -362,6 +366,7 @@ class _ChannelModalState extends State<ChannelModal> {
               child: CupertinoTextField(
                 controller: eventController,
                 placeholder: 'Event name',
+                style: TextStyle(color: Colors.red),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.all(Radius.circular(5)),
                   border: Border.all(
@@ -413,9 +418,12 @@ class _PusherPage extends State<PusherPage> {
   }
 
   FlutterPusher getPusherClient() {
-    PusherOptions options =
-        PusherOptions(host: '10.0.2.2', port: 6001, encrypted: false);
-    return FlutterPusher('app', options, lazyConnect: true);
+    PusherOptions options = PusherOptions(cluster: "ap2");
+    return FlutterPusher(
+      'c0ece18c13fbe616d0b2',
+      options,
+      enableLogging: true,
+    );
   }
 
   void connect() {
@@ -431,12 +439,12 @@ class _PusherPage extends State<PusherPage> {
     echo = new Echo({
       'broadcaster': 'pusher',
       'client': pusherClient,
-      'auth': {
-        'headers': {
-          'Authorization':
-              'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjFkNTcxYzcyMTcwZmFmNDRmM2JkYjdkZTE2NmVmNTMzZTMwYjYwNjI2MjA5NjJlNWFhMmNkNTkyOTgwMzNlZmVlMjMyNzI2YTczMTY2NGZiIn0.eyJhdWQiOiIxIiwianRpIjoiMWQ1NzFjNzIxNzBmYWY0NGYzYmRiN2RlMTY2ZWY1MzNlMzBiNjA2MjYyMDk2MmU1YWEyY2Q1OTI5ODAzM2VmZWUyMzI3MjZhNzMxNjY0ZmIiLCJpYXQiOjE1NTAyNTE4MzIsIm5iZiI6MTU1MDI1MTgzMiwiZXhwIjoxNTgxNzg3ODMyLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.Yhmzofhp8q32gcFmzQDAmm48cwmxqrZAi4Mfsbzp6pyzjzWziEM8isDrNqyQZANXUJP40LGJroK9LkVddHyqWtPQqTNXPv-Azx3tVy_YOkI-BhJhttKaiN7DTPD9gYiuUpINUjrqTVuzxzDHzXNmTemOVqVBABo4f6m9ZoWkdyNKyirPZHagofs4Lp1YR0--AgItZVCPl3DYrLdMY78a687edQaYA1q3HKWPggtxayN35BPoeOm08uxmE_YzYXRTzi6OxGLNcQnrC61NvWqTCZ5Ze4fvUuVRtASqybV1Y4oxcgs2kZYg1rxm5idHUrGwQE4fLmaGgDclBR7Ax-NbiN-VN1gJpB2D7eVYxigCVsCVBnoA5DtjKewg0axckthTXyxcTWJBnbarbbnPuI9ZWrxaZWcp4kWwosw9_pr7Ee_5Q-Uxr_ksZg6qZ3gVrqR9ZY0zZoQl4qEsbUGfLXLGrKj_NjeESOcUsPY6fACIy_Okttxto_a3y9wQwPMDJY-jxdLdZ1TdusZUJG8d5KJxfOUprqsCzju-TVnLZxpA-f15mI9zIcjtA-2PFYnUuukIxBw-FXzBWssrMLyTXxHl9Sux3WH5mtXDW_wbwoJj6aaLHBw28jgokbdlKx3QRWdTvAsALJM6nmDN4BWu2pIn05i5wpcUnxHIvcdOgoh3hn0'
-        }
-      }
+      // 'auth': {
+      //   'headers': {
+      //     'Authorization':
+      //         'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjFkNTcxYzcyMTcwZmFmNDRmM2JkYjdkZTE2NmVmNTMzZTMwYjYwNjI2MjA5NjJlNWFhMmNkNTkyOTgwMzNlZmVlMjMyNzI2YTczMTY2NGZiIn0.eyJhdWQiOiIxIiwianRpIjoiMWQ1NzFjNzIxNzBmYWY0NGYzYmRiN2RlMTY2ZWY1MzNlMzBiNjA2MjYyMDk2MmU1YWEyY2Q1OTI5ODAzM2VmZWUyMzI3MjZhNzMxNjY0ZmIiLCJpYXQiOjE1NTAyNTE4MzIsIm5iZiI6MTU1MDI1MTgzMiwiZXhwIjoxNTgxNzg3ODMyLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.Yhmzofhp8q32gcFmzQDAmm48cwmxqrZAi4Mfsbzp6pyzjzWziEM8isDrNqyQZANXUJP40LGJroK9LkVddHyqWtPQqTNXPv-Azx3tVy_YOkI-BhJhttKaiN7DTPD9gYiuUpINUjrqTVuzxzDHzXNmTemOVqVBABo4f6m9ZoWkdyNKyirPZHagofs4Lp1YR0--AgItZVCPl3DYrLdMY78a687edQaYA1q3HKWPggtxayN35BPoeOm08uxmE_YzYXRTzi6OxGLNcQnrC61NvWqTCZ5Ze4fvUuVRtASqybV1Y4oxcgs2kZYg1rxm5idHUrGwQE4fLmaGgDclBR7Ax-NbiN-VN1gJpB2D7eVYxigCVsCVBnoA5DtjKewg0axckthTXyxcTWJBnbarbbnPuI9ZWrxaZWcp4kWwosw9_pr7Ee_5Q-Uxr_ksZg6qZ3gVrqR9ZY0zZoQl4qEsbUGfLXLGrKj_NjeESOcUsPY6fACIy_Okttxto_a3y9wQwPMDJY-jxdLdZ1TdusZUJG8d5KJxfOUprqsCzju-TVnLZxpA-f15mI9zIcjtA-2PFYnUuukIxBw-FXzBWssrMLyTXxHl9Sux3WH5mtXDW_wbwoJj6aaLHBw28jgokbdlKx3QRWdTvAsALJM6nmDN4BWu2pIn05i5wpcUnxHIvcdOgoh3hn0'
+      //   }
+      // }
     });
   }
 
@@ -452,24 +460,28 @@ class _PusherPage extends State<PusherPage> {
 
   void _listenToChannel(String type, String name, String event) {
     dynamic channel;
-
-    if (type == 'public') {
-      channel = echo.channel(name);
-    } else if (type == 'private') {
-      channel = echo.private(name);
-    } else if (type == 'presence') {
-      channel = echo.join(name).here((users) {
-        print(users);
-      }).joining((user) {
-        print(user);
-      }).leaving((user) {
-        print(user);
-      });
-    }
-
-    channel.listen(event, (e) {
-      log('channel: $name, event: $event');
+    channel =  echo.channel(name);
+    channel.on(event, (e) {
+      log('channel: $name, event: $event  $e');
     });
+
+    // if (type == 'public') {
+    // channel = echo.channel(name);
+    // } else if (type == 'private') {
+    //   channel = echo.private(name);
+    // } else if (type == 'presence') {
+    //   channel = echo.join(name).here((users) {
+    //     print(users);
+    //   }).joining((user) {
+    //     print(user);
+    //   }).leaving((user) {
+    //     print(user);
+    //   });
+    // }
+
+    // channel.listen(event, (e) {
+    //   log('channel: $name, event: $event  $e');
+    // });
   }
 
   @override
@@ -506,37 +518,38 @@ class _PusherPage extends State<PusherPage> {
                 children: <Widget>[
                   CupertinoButton(
                     onPressed: () {
-                      showCupertinoModalPopup<void>(
-                        context: context,
-                        builder: (BuildContext context) {
-                          return ChannelModal(
-                            listen: true,
-                            type: channel_type,
-                            name: channel_name,
-                            onTypeChanged: (value) {
-                              setState(() {
-                                channel_type = value;
-                              });
-                            },
-                            onNameChanged: (value) {
-                              setState(() {
-                                channel_name = value;
-                              });
-                            },
-                            onEventChanged: (value) {
-                              setState(() {
-                                event = value;
-                              });
-                            },
-                            onSubmit: () {
-                              log('Listening to channel: $channel_name');
-                              _listenToChannel(
-                                  channel_type, channel_name, event);
-                              Navigator.of(context).pop();
-                            },
-                          );
-                        },
-                      );
+                      _listenToChannel("type", "channel", "event");
+                      // showCupertinoModalPopup<void>(
+                      //   context: context,
+                      //   builder: (BuildContext context) {
+                      //     return ChannelModal(
+                      //       listen: true,
+                      //       type: channel_type,
+                      //       name: channel_name,
+                      //       onTypeChanged: (value) {
+                      //         setState(() {
+                      //           channel_type = value;
+                      //         });
+                      //       },
+                      //       onNameChanged: (value) {
+                      //         setState(() {
+                      //           channel_name = value;
+                      //         });
+                      //       },
+                      //       onEventChanged: (value) {
+                      //         setState(() {
+                      //           event = value;
+                      //         });
+                      //       },
+                      //       onSubmit: () {
+                      //         log('Listening to channel: $channel_name');
+                      //         _listenToChannel(
+                      //             channel_type, channel_name, event);
+                      //         Navigator.of(context).pop();
+                      //       },
+                      //     );
+                      //   },
+                      // );
                     },
                     child: Text('listen to channel'),
                   ),
@@ -568,7 +581,7 @@ class _PusherPage extends State<PusherPage> {
                     visible: !is_connected,
                     child: CupertinoButton(
                       onPressed: () {
-                        log('connecting');
+                        // log('connecting');
                         this.connect();
                       },
                       child: Text('connect'),
