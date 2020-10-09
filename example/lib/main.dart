@@ -439,6 +439,14 @@ class _PusherPage extends State<PusherPage> {
     echo = new Echo({
       'broadcaster': 'pusher',
       'client': pusherClient,
+
+      //for laravel-websocket
+      // 'wsHost': 'http://128.199.21.166',
+      // 'wsPort': 6001,
+      // 'forceTLS': false,
+      // 'disableStats': true,
+
+      
       // 'auth': {
       //   'headers': {
       //     'Authorization':
@@ -460,7 +468,7 @@ class _PusherPage extends State<PusherPage> {
 
   void _listenToChannel(String type, String name, String event) {
     dynamic channel;
-    channel =  echo.channel(name);
+    channel = echo.channel(name);
     channel.on(event, (e) {
       log('channel: $name, event: $event  $e');
     });
@@ -518,38 +526,38 @@ class _PusherPage extends State<PusherPage> {
                 children: <Widget>[
                   CupertinoButton(
                     onPressed: () {
-                      _listenToChannel("type", "channel", "event");
-                      // showCupertinoModalPopup<void>(
-                      //   context: context,
-                      //   builder: (BuildContext context) {
-                      //     return ChannelModal(
-                      //       listen: true,
-                      //       type: channel_type,
-                      //       name: channel_name,
-                      //       onTypeChanged: (value) {
-                      //         setState(() {
-                      //           channel_type = value;
-                      //         });
-                      //       },
-                      //       onNameChanged: (value) {
-                      //         setState(() {
-                      //           channel_name = value;
-                      //         });
-                      //       },
-                      //       onEventChanged: (value) {
-                      //         setState(() {
-                      //           event = value;
-                      //         });
-                      //       },
-                      //       onSubmit: () {
-                      //         log('Listening to channel: $channel_name');
-                      //         _listenToChannel(
-                      //             channel_type, channel_name, event);
-                      //         Navigator.of(context).pop();
-                      //       },
-                      //     );
-                      //   },
-                      // );
+                      // _listenToChannel("type", "channel", "event");
+                      showCupertinoModalPopup<void>(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return ChannelModal(
+                            listen: true,
+                            type: channel_type,
+                            name: channel_name,
+                            onTypeChanged: (value) {
+                              setState(() {
+                                channel_type = value;
+                              });
+                            },
+                            onNameChanged: (value) {
+                              setState(() {
+                                channel_name = value;
+                              });
+                            },
+                            onEventChanged: (value) {
+                              setState(() {
+                                event = value;
+                              });
+                            },
+                            onSubmit: () {
+                              log('Listening to channel: $channel_name');
+                              _listenToChannel(
+                                  channel_type, channel_name, event);
+                              Navigator.of(context).pop();
+                            },
+                          );
+                        },
+                      );
                     },
                     child: Text('listen to channel'),
                   ),
